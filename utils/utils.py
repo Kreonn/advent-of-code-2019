@@ -1,3 +1,4 @@
+import math
 import os
 
 
@@ -11,3 +12,18 @@ def load_input_file(identifier: int):
         return open(os.path.abspath(input_filepath))
     else:
         raise FileNotFoundError("File {} not found".format(input_filepath))
+
+
+def get_angle(start: tuple, end: tuple):
+    y = end[0] - start[0]
+    x = start[1] - end[1]
+
+    angle = math.atan2(y, x) * 180 / math.pi
+
+    if angle < 0:
+        angle = 360 + angle
+
+    return angle
+
+def get_distance(start: tuple, end: tuple):
+    return math.sqrt((end[0] - start[0]) ** 2 + (end[1] - start[1]) ** 2)
