@@ -27,3 +27,6 @@ def get_angle(start: tuple, end: tuple):
 
 def get_distance(start: tuple, end: tuple):
     return math.sqrt((end[0] - start[0]) ** 2 + (end[1] - start[1]) ** 2)
+
+def get_least_common_multiple(a: int, b: int):
+    return abs(a * b) // math.gcd(a, b)
